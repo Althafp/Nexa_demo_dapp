@@ -7,7 +7,12 @@ const nextConfig = {
   webpack: (config, options) => {
     const { isServer } = options;
 
-    config.experiments = {...config.experiments, topLevelAwait: true };
+    config.experiments = {
+      ...config.experiments, 
+      topLevelAwait: true,
+      asyncWebAssembly: true,
+      layers: true
+    };
 
     // Force single instance of critical dependencies
     const libnexaPath = path.resolve(__dirname, 'node_modules/libnexa-ts');
