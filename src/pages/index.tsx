@@ -60,35 +60,6 @@ function App() {
                 </Card.Body>
               </Card>
 
-              {/* Faucet Card */}
-              <Card className="mb-4 shadow-sm border-primary">
-                <Card.Body className="text-center">
-                  <h4 className="mb-3 text-primary">💧 Need Testnet NEXA?</h4>
-                  <p className="mb-3">
-                    Get 1000 tNEXA instantly for development and testing. Perfect for trying out this demo!
-                  </p>
-                  <Button 
-                    variant="primary" 
-                    size="lg"
-                    onClick={() => window.open('https://nexa-faucet.vercel.app/', '_blank')}
-                    className="mb-2"
-                  >
-                    🚀 Claim 1000 tNEXA
-                  </Button>
-                  <div className="small text-muted">
-                    <p className="mb-1">
-                      <strong>How to use:</strong>
-                    </p>
-                    <ol className="text-start mb-0" style={{ fontSize: '0.8rem' }}>
-                      <li>Connect your wallet to get your testnet address</li>
-                      <li>Click the faucet button above</li>
-                      <li>Paste your address (starts with "nexatest:")</li>
-                      <li>Claim your testnet tokens instantly!</li>
-                    </ol>
-                  </div>
-                </Card.Body>
-              </Card>
-
               {/* Swap Box */}
               <SwapBox
                 contractAddress={CONTRACT_ADDRESS}
