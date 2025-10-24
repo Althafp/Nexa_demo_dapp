@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Navbar, Card } from 'react-bootstrap'
+import { Container, Row, Col, Navbar, Card, Button } from 'react-bootstrap'
 import { Network } from '@nexscript/nexscript'
 import { WalletProvider } from '../contexts/WalletContext'
 import ConnectButton from '../components/ConnectButton'
@@ -22,7 +22,17 @@ function App() {
               {' '}
               Token Swap Demo
             </Navbar.Brand>
-            <ConnectButton network={Network.TESTNET} />
+            <div className="d-flex gap-2">
+              <Button 
+                variant="outline-light" 
+                size="sm"
+                onClick={() => window.open('https://nexa-faucet.vercel.app/', '_blank')}
+                style={{ fontSize: '0.875rem' }}
+              >
+                💧 Get Testnet NEXA
+              </Button>
+              <ConnectButton network={Network.TESTNET} />
+            </div>
           </Container>
         </Navbar>
 
@@ -50,6 +60,35 @@ function App() {
                 </Card.Body>
               </Card>
 
+              {/* Faucet Card */}
+              <Card className="mb-4 shadow-sm border-primary">
+                <Card.Body className="text-center">
+                  <h4 className="mb-3 text-primary">💧 Need Testnet NEXA?</h4>
+                  <p className="mb-3">
+                    Get 1000 tNEXA instantly for development and testing. Perfect for trying out this demo!
+                  </p>
+                  <Button 
+                    variant="primary" 
+                    size="lg"
+                    onClick={() => window.open('https://nexa-faucet.vercel.app/', '_blank')}
+                    className="mb-2"
+                  >
+                    🚀 Claim 1000 tNEXA
+                  </Button>
+                  <div className="small text-muted">
+                    <p className="mb-1">
+                      <strong>How to use:</strong>
+                    </p>
+                    <ol className="text-start mb-0" style={{ fontSize: '0.8rem' }}>
+                      <li>Connect your wallet to get your testnet address</li>
+                      <li>Click the faucet button above</li>
+                      <li>Paste your address (starts with "nexatest:")</li>
+                      <li>Claim your testnet tokens instantly!</li>
+                    </ol>
+                  </div>
+                </Card.Body>
+              </Card>
+
               {/* Swap Box */}
               <SwapBox
                 contractAddress={CONTRACT_ADDRESS}
@@ -65,6 +104,9 @@ function App() {
                 <Card.Body>
                   <h5 className="mb-3">🎓 Instructions for Students</h5>
                   <ol className="mb-0">
+                    <li className="mb-2">
+                      <strong>Get testnet tokens:</strong> Click "💧 Get Testnet NEXA" to claim 1000 tNEXA from the faucet
+                    </li>
                     <li className="mb-2">
                       <strong>Connect your wallet:</strong> Click the "Connect Wallet" button in the top right
                     </li>
