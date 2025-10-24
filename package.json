@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "fix-imports": "powershell -ExecutionPolicy Bypass -File ./fix-import-assertions.ps1",
-    "postinstall": "powershell -ExecutionPolicy Bypass -File ./fix-import-assertions.ps1"
+    "fix-imports": "node fix-import-assertions.js",
+    "postinstall": "node fix-import-assertions.js"
   },
   "resolutions": {
     "libnexa-ts": "^1.0.0"
